@@ -8,7 +8,7 @@ License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://downloads.mozdev.org/themes/%{_realname}.jar
 Source1:	%{_realname}-installed-chrome.txt
-URL:		http://www0.mozdev.org/themes/skins/ie.html
+URL:		http://themes.mozdev.org/skins/ie.html
 BuildArch:	noarch
 Requires:	mozilla >= 1.0-7
 BuildRoot:	%{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
