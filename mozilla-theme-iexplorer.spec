@@ -8,7 +8,6 @@ License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://downloads.mozdev.org/themes/themes/%{_realname}%{version}.xpi
 # Source0-md5:	fad61f903a906228a3705ff05b5bbf37
-# Source0-size:	223001
 Source1:	%{_realname}-installed-chrome.txt
 URL:		http://themes.mozdev.org/skins/ie.html
 BuildRequires:	perl-base
