@@ -1,26 +1,29 @@
 Summary:	Simulation of Internet Exporer 6.0 appearance
-Summary(pl):	Symulacja wyg³±du Internet Explorera 6.0
+Summary(pl):	Symulacja wygl±du Internet Explorera 6.0
 Name:		mozilla-theme-iexplorer
 %define		_realname	ieskin
-Version:	1.0
-Release:	2
+Version:	1.3
+Release:	1
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	http://downloads.mozdev.org/themes/%{_realname}.jar
+Source0:	http://pages.prodigy.net/zzxc/%{_realname}/%{_realname}%{version}.xpi
+# Source0-md5:	fad61f903a906228a3705ff05b5bbf37
 Source1:	%{_realname}-installed-chrome.txt
-URL:		http://www0.mozdev.org/themes/skins/ie.html
-BuildArch:	noarch
+URL:		http://themes.mozdev.org/skins/ie.html
+Requires(post,postun):	textutils
 Requires:	mozilla >= 1.0-7
+BuildRequires:	unzip
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
+%define         _prefix         /usr/X11R6
 %define		_chromedir	%{_libdir}/mozilla/chrome
 
 %description
 This theme is exact simulation of MS Internet Explorer 6.0 appearance.
 
 %description -l pl
-Temat dok³adnie symuluje wygl±d Internet Explorera 6.0 z MS Windows.
+Motyw dok³adnie symuluje wygl±d Internet Explorera 6.0 z MS Windows.
 
 %prep
 
@@ -28,16 +31,19 @@ Temat dok³adnie symuluje wygl±d Internet Explorera 6.0 z MS Windows.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_chromedir}
 
-install %{SOURCE0} %{SOURCE1} $RPM_BUILD_ROOT%{_chromedir}
-
-%post
-cat %{_chromedir}/*-installed-chrome.txt >%{_chromedir}/installed-chrome.txt
-
-%postun
-cat %{_chromedir}/*-installed-chrome.txt >%{_chromedir}/installed-chrome.txt
+unzip %{SOURCE0} ieskin.jar -d $RPM_BUILD_ROOT%{_chromedir}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_chromedir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+umask 022
+cat %{_chromedir}/*-installed-chrome.txt >%{_chromedir}/installed-chrome.txt
+
+%postun
+umask 022
+cat %{_chromedir}/*-installed-chrome.txt >%{_chromedir}/installed-chrome.txt
 
 %files
 %defattr(644,root,root,755)
