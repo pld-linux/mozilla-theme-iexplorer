@@ -11,11 +11,13 @@ Source0:	http://downloads.mozdev.org/themes/themes/%{_realname}%{version}.xpi
 # Source0-size:	223001
 Source1:	%{_realname}-installed-chrome.txt
 URL:		http://themes.mozdev.org/skins/ie.html
+BuildRequires:	perl-base
 BuildRequires:	unzip
+BuildRequires:	zip
 Requires(post,postun):	textutils
 Requires:	mozilla >= 1.5
 BuildArch:	noarch
-BuildRoot:	%{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_chromedir	%{_datadir}/mozilla/chrome
 
@@ -26,15 +28,13 @@ This theme is exact simulation of MS Internet Explorer 6.0 appearance.
 Motyw dok³adnie symuluje wygl±d Internet Explorera 6.0 z MS Windows.
 
 %prep
-%setup -c -n %{name}
+%setup -c
 unzip -o ieskin.jar
-rm ieskin.jar
-
+rm -f ieskin.jar
 
 %build
 perl -pi -e 's/(skinVersion=)"1\.[0-9]"/$1"1.5"/' contents.rdf
 find -name "*.css" | xargs perl -pi -e 's/:-moz-/::-moz-/'
-
 
 %install
 rm -rf $RPM_BUILD_ROOT
