@@ -1,5 +1,5 @@
 Summary:	Simulation of Internet Exporer 6.0 appearance
-Summary(pl):	Symulacja wyg³±du Internet Explorera 6.0
+Summary(pl):	Symulacja wygl±du Internet Explorera 6.0
 Name:		mozilla-theme-iexplorer
 %define		_realname	ieskin
 Version:	1.3
