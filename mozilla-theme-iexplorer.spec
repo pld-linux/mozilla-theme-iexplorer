@@ -2,12 +2,11 @@ Summary:	Simulation of Internet Exporer 6.0 appearance
 Summary(pl):	Symulacja wygl±du Internet Explorera 6.0
 Name:		mozilla-theme-iexplorer
 %define		_realname	ieskin
-%define 		_realversion 1.3
 Version:	1.3
 Release:	3
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	http://pages.prodigy.net/zzxc/%{_realname}/%{_realname}%{_realversion}.xpi
+Source0:	http://pages.prodigy.net/zzxc/%{_realname}/%{_realname}%{version}.xpi
 # Source0-md5:	fad61f903a906228a3705ff05b5bbf37
 Source1:	%{_realname}-installed-chrome.txt
 URL:		http://themes.mozdev.org/skins/ie.html
