@@ -3,7 +3,7 @@ Summary(pl):	Symulacja wygl±du Internet Explorera 6.0
 Name:		mozilla-theme-iexplorer
 %define		_realname	ieskin
 Version:	1.3
-Release:	4
+Release:	5
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://pages.prodigy.net/zzxc/%{_realname}/%{_realname}%{version}.xpi
@@ -16,7 +16,7 @@ Requires:	mozilla >= 1.5
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
 
-%define		_chromedir	%{_libdir}/mozilla/chrome
+%define		_chromedir	%{_datadir}/mozilla/chrome
 
 %description
 This theme is exact simulation of MS Internet Explorer 6.0 appearance.
