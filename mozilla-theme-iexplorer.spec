@@ -2,15 +2,16 @@ Summary:	Simulation of Internet Exporer 6.0 appearance
 Summary(pl):	Symulacja wyg³±du Internet Explorera 6.0
 Name:		mozilla-theme-iexplorer
 %define		_realname	ieskin
-Version:	1.0
-Release:	2
+Version:	1.3
+Release:	1
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	http://downloads.mozdev.org/themes/%{_realname}.jar
+Source0:	http://pages.prodigy.net/zzxc/%{_realname}/%{_realname}%{version}.xpi
 Source1:	%{_realname}-installed-chrome.txt
 URL:		http://themes.mozdev.org/skins/ie.html
 Requires(post,postun):	textutils
 Requires:	mozilla >= 1.0-7
+BuildRequires:	unzip
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
 
@@ -28,7 +29,8 @@ Motyw dok³adnie symuluje wygl±d Internet Explorera 6.0 z MS Windows.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_chromedir}
 
-install %{SOURCE0} %{SOURCE1} $RPM_BUILD_ROOT%{_chromedir}
+unzip %{SOURCE0} ieskin.jar -d $RPM_BUILD_ROOT%{_chromedir}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_chromedir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
