@@ -1,6 +1,0 @@
-skin,install,url,jar:resource:/chrome/ieskin.jar!/
-skin,install,url,jar:resource:/chrome/ieskin.jar!/global/
-skin,install,url,jar:resource:/chrome/ieskin.jar!/communicator/
-skin,install,url,jar:resource:/chrome/ieskin.jar!/editor/
-skin,install,url,jar:resource:/chrome/ieskin.jar!/messenger/
-skin,install,url,jar:resource:/chrome/ieskin.jar!/navigator/
