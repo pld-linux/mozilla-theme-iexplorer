@@ -10,9 +10,9 @@ Source0:	http://pages.prodigy.net/zzxc/%{_realname}/%{_realname}%{version}.xpi
 # Source0-md5:	fad61f903a906228a3705ff05b5bbf37
 Source1:	%{_realname}-installed-chrome.txt
 URL:		http://themes.mozdev.org/skins/ie.html
+BuildRequires:	unzip
 Requires(post,postun):	textutils
 Requires:	mozilla >= 1.0-7
-BuildRequires:	unzip
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
 
