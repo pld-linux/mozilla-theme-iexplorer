@@ -20,7 +20,7 @@ BuildRoot:	%{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
 This theme is exact simulation of MS Internet Explorer 6.0 appearance.
 
 %description -l pl
-Temat dok³adnie symuluje wygl±d Internet Explorera 6.0 z MS Windows.
+Motyw dok³adnie symuluje wygl±d Internet Explorera 6.0 z MS Windows.
 
 %prep
 
