@@ -15,7 +15,7 @@ BuildRequires:	perl-base
 BuildRequires:	unzip
 BuildRequires:	zip
 Requires(post,postun):	textutils
-Requires:	mozilla >= 1.5
+Requires:	mozilla >= 5:1.5
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
