@@ -9,6 +9,7 @@ Group:		X11/Applications/Networking
 Source0:	http://downloads.mozdev.org/themes/%{_realname}.jar
 Source1:	%{_realname}-installed-chrome.txt
 URL:		http://www0.mozdev.org/themes/skins/ie.html
+BuildArch:	noarch
 Requires:	mozilla >= 1.0-7
 BuildRoot:	%{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
 
@@ -27,19 +28,16 @@ Temat dok³adnie symuluje wygl±d Internet Explorera 6.0 z MS Windows.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_chromedir}
 
-install %{SOURCE0} $RPM_BUILD_ROOT%{_chromedir}
-install %{SOURCE1} $RPM_BUILD_ROOT%{_chromedir}
+install %{SOURCE0} %{SOURCE1} $RPM_BUILD_ROOT%{_chromedir}
+
+%post
+cat %{_chromedir}/*-installed-chrome.txt >%{_chromedir}/installed-chrome.txt
+
+%postun
+cat %{_chromedir}/*-installed-chrome.txt >%{_chromedir}/installed-chrome.txt
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%post
-cd %{_chromedir}
-cat *-installed-chrome.txt >installed-chrome.txt
-
-%postun
-cd %{_chromedir}
-cat *-installed-chrome.txt >installed-chrome.txt
 
 %files
 %defattr(644,root,root,755)
