@@ -12,10 +12,11 @@ Source1:	%{_realname}-installed-chrome.txt
 URL:		http://themes.mozdev.org/skins/ie.html
 BuildRequires:	unzip
 Requires(post,postun):	textutils
-Requires:	mozilla >= 1.0-7
+Requires:	mozilla >= 1.2.1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{_realname}-%{version}-root-%(id -u -n)
 
+%define		_prefix		/usr/X11R6
 %define		_chromedir	%{_libdir}/mozilla/chrome
 
 %description
