@@ -1,5 +1,5 @@
 Summary:	Simulation of Internet Exporer 6.0 appearance
-Summary(pl):	Symulacja wygl±du Internet Explorera 6.0
+Summary(pl.UTF-8):   Symulacja wyglÄ…du Internet Explorera 6.0
 Name:		mozilla-theme-iexplorer
 %define		_realname	ieskin
 Version:	1.3
@@ -23,8 +23,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This theme is exact simulation of MS Internet Explorer 6.0 appearance.
 
-%description -l pl
-Motyw dok³adnie symuluje wygl±d Internet Explorera 6.0 z MS Windows.
+%description -l pl.UTF-8
+Motyw dokÅ‚adnie symuluje wyglÄ…d Internet Explorera 6.0 z MS Windows.
 
 %prep
 %setup -c
